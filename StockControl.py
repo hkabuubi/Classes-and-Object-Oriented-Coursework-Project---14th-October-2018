@@ -64,6 +64,7 @@ class StockItem(object):
         if self.quantity < 5:
             return True
         #pass
+        
     
     def sell(self):
         """Process the sale of an item, generates an exception if an item is sold when its stock is zero"""
@@ -155,5 +156,4 @@ print(stockctrl.listRestock())
 #    except ItemNotFoundError as (e):
 #        print("Item not found:" + e.barcode)
     
-print("\nItems that need restocking:\n")
-print(stockctrl.listRestock())
+
