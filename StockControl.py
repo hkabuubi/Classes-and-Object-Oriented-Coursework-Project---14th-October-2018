@@ -104,7 +104,8 @@ class StockControl(object):
         """Add an item to the stock list"""
         #TODO
         #hint: add an item to this.stocklist
-        pass
+        self.stocklist.append(item)
+        #pass
     
     def sellStock(self,barcode):
         """Process the sale of one item"""
