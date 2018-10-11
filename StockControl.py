@@ -69,7 +69,11 @@ class StockItem(object):
         """Process the sale of an item, generates an exception if an item is sold when its stock is zero"""
         #TODO
         #hint: use the raise method to create an exception.
-        pass
+        if self.quantity > 0:
+            self.quantity -= 1
+        else:
+            raise ValueError("sold out")
+        #pass
     
 class StockControl(object):
     """The stock control system"""
