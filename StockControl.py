@@ -79,13 +79,21 @@ class StockControl(object):
         #note: we could have implemented the list as a dictionary, with
         #the barcode as the key, however if the barcode for the item
         #changes we might have problems.
-        self.stocklist = [] #a list of stock items        
+        self.stocklist = [] #a list of stock items
+        self.Restocklist = [] #a list of item that need restocking
     
     def listRestock(self):
         """Return a string listing items that need restocking"""
         #TODO return a list of items that need restocking
         #hint: Need to loop through the stocklist
-        pass
+         for item in self.stocklist:
+            #StockItem
+            if StockItem.needRestock(item):
+                print(StockItem.toString(item))
+                self.Restocklist.append(StockItem.toString(item))
+        if len(self.Restocklist) == 0:
+            print("All items stocked")
+        #pass
     
     def addStockType(self,item):
         """Add an item to the stock list"""
