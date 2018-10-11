@@ -113,8 +113,20 @@ class StockControl(object):
         #hint: look through the list of items,
         #and call the 'sell' method of the relevant item
         #return an error if the product isn't found
-        pass
-        
+        #pass
+        objectitem = []
+        for item in self.stocklist:
+            if item.barcode == barcode:
+                objectitem.append(item)
+        if len(objectitem) >0:
+            for item in objectitem:
+                if item.quantity > 0:
+                   item.quantity = item.quantity - 1
+                   objectitem = []
+                else:
+                   raise SoldOutOfStockError(item)
+        else:
+            raise ItemNotFoundError(barcode)
 
 #Below is some code to test the classes. Feel free
 #to alter this test-code to test your submission
