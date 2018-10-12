@@ -74,7 +74,7 @@ class StockItem(object):
         if self.quantity > 0:
             self.quantity -= 1
         else:
-            raise ValueError("sold out")
+            raise SoldOutOfStockError(self)
         #pass
        
     def restockItem(self, quantity):
