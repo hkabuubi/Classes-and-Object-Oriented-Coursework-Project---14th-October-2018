@@ -76,6 +76,10 @@ class StockItem(object):
         else:
             raise ValueError("sold out")
         #pass
+       
+    def restockItem(self, quantity):
+        """Processes the restocking of item of any quantity"""
+        self.quantity = self.quantity + quantity
         
     
 class StockControl(object):
