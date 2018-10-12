@@ -1,13 +1,5 @@
 ## Advanced Programming, coursework 1: Object Orientation
-##
-## The stock control system classes are unfinished.
-## Work through the 14 steps of the coursework to
-## implement and extend the methods and classes.
-##
-##
 
-## Student's Name:
-## Student's Number:
 
 from datetime import date
 
