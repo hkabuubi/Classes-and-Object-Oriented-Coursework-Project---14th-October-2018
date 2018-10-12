@@ -76,6 +76,7 @@ class StockItem(object):
         else:
             raise ValueError("sold out")
         #pass
+        
     
 class StockControl(object):
     """The stock control system"""
@@ -128,7 +129,20 @@ class StockControl(object):
                    raise SoldOutOfStockError(item)
         else:
             raise ItemNotFoundError(barcode)
+            
+    def restock(self, barcode, quantity):
+        """Processes the restocking of any quantity of an item, raises an exception if the barcode of an item is not found"""
+        objectitem = []
+        for item in self.stocklist:
+            if item.barcode == barcode:
+                objectitem.append(item)
 
+        if len(objectitem) >0:
+            item.restockItem(quantity)
+            objectitem = []
+        else:
+            raise ItemNotFoundError(barcode)
+            
 #Below is some code to test the classes. Feel free
 #to alter this test-code to test your submission
 #more thoroughly.
