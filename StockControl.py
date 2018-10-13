@@ -5,7 +5,6 @@ from datetime import date
 """A stock control system"""
 
 
-
 class StockControlSystemError(Exception):
     """Base class for exceptions in this module."""
     pass
