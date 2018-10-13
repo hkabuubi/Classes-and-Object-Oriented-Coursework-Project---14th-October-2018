@@ -92,12 +92,6 @@ class PerishableStockItem(StockItem):
 
         itemdetails = super().toString() + " SellbyDate: " + str(self.sellbydate)
         return itemdetails
-
-
-    def addStockType(self,item):
-        """Add an item to the stock list"""
-        #add an item to this.stocklist
-        self.stocklist.append(item)
       
 
 class StockControl(object):
