@@ -127,7 +127,7 @@ class StockControl(object):
         #and call the 'sell' method of the relevant item
         #return an error if the product isn't found
         objectitem = []
-
+        
 ##for loop being used to loop over the list. when item whose barcode matches
 ##the item
 ##being sold. the object of that item is appended to a list (objectitem is used to
