@@ -1,6 +1,5 @@
 ## Advanced Programming, coursework 1: Object Orientation
 
-
 from datetime import date
 
 """A stock control system"""
@@ -163,8 +162,6 @@ class StockControl(object):
             raise ItemNotFoundError(barcode)
             
         
-        
-
 #Below is some code to test the classes. Feel free
 #to alter this test-code to test your submission
 #more thoroughly.
