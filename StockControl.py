@@ -74,9 +74,7 @@ class StockItem(object):
 class PerishableStockItem(StockItem):
     
     def __init__(self, name, barcode, quantity, sellbydate):
-       
         super().__init__(name, barcode, quantity)
-        
         self.sellbydate = sellbydate
         
     def pastSellByDate(self):
@@ -84,12 +82,11 @@ class PerishableStockItem(StockItem):
             return True
         
     def needRestock(self):
-        if self.quantity < 5 or date.today() > self.sellbydate:
+        if self.quantity < 5 or self.pastSellByDate():
             return True
 
     def toString(self):
         """Returns a string describing the stock item, its barcode and the quantity remaining"""
-
         itemdetails = super().toString() + " SellbyDate: " + str(self.sellbydate)
         return itemdetails
       
