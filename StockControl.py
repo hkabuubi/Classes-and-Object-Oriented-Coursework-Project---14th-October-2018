@@ -76,7 +76,7 @@ class PerishableStockItem(StockItem):
     def __init__(self, name, barcode, quantity, sellbydate):
        
         super().__init__(name, barcode, quantity)
-        self.stocklist = [] #a list of Perishable stock items
+        
         self.sellbydate = sellbydate
         
     def pastSellByDate(self):
